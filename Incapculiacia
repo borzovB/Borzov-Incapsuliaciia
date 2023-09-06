@@ -1,0 +1,34 @@
+public class Person {
+    private String name; // Приватное поле для хранения имени человека
+    private int age;    // Приватное поле для хранения возраста человека
+
+    // Конструктор класса
+    public Person(String name, int age) {
+        this.name = name; // Устанавливаем имя, переданное в конструктор
+        this.age = age;   // Устанавливаем возраст, переданный в конструктор
+    }
+
+    // Геттер для имени
+    public String getName() {
+        return name; // Возвращаем текущее имя
+    }
+
+    // Сеттер для имени
+    public void setName(String name) {
+        this.name = name; // Устанавливаем новое имя
+    }
+
+    // Геттер для возраста
+    public int getAge() {
+        return age; // Возвращаем текущий возраст
+    }
+
+    // Сеттер для возраста
+    public void setAge(int age) {
+        if (age >= 0) {
+            this.age = age; // Устанавливаем новый возраст, если он неотрицательный
+        } else {
+            System.out.println("Возраст не может быть отрицательным."); // Выводим сообщение об ошибке, если возраст отрицательный
+        }
+    }
+}
