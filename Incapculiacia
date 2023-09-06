@@ -1,34 +1,37 @@
-public class Person {
-    private String name; // Приватное поле для хранения имени человека
-    private int age;    // Приватное поле для хранения возраста человека
+package com.mycompany.m;
+// Создаем класс M, который будет инкапсулировать данные и методы
+public class M {
+    
+    // Приватное поле для инкапсуляции данных
+    private int myValue;
 
-    // Конструктор класса
-    public Person(String name, int age) {
-        this.name = name; // Устанавливаем имя, переданное в конструктор
-        this.age = age;   // Устанавливаем возраст, переданный в конструктор
+    // Конструктор класса для инициализации объектов
+    public M(int initialValue) {
+        // Используем ключевое слово this для обращения к текущему объекту
+        this.myValue = initialValue;
     }
 
-    // Геттер для имени
-    public String getName() {
-        return name; // Возвращаем текущее имя
+    // Метод для получения значения myValue
+    public int getMyValue() {
+        return myValue;
     }
 
-    // Сеттер для имени
-    public void setName(String name) {
-        this.name = name; // Устанавливаем новое имя
+    // Метод для установки значения myValue
+    public void setMyValue(int newValue) {
+        this.myValue = newValue;
     }
 
-    // Геттер для возраста
-    public int getAge() {
-        return age; // Возвращаем текущий возраст
-    }
+    // Пример использования инкапсулированных данных и методов
+    public static void main(String[] args) {
+        // Создаем объект класса M
+        M myObject = new M(42);
 
-    // Сеттер для возраста
-    public void setAge(int age) {
-        if (age >= 0) {
-            this.age = age; // Устанавливаем новый возраст, если он неотрицательный
-        } else {
-            System.out.println("Возраст не может быть отрицательным."); // Выводим сообщение об ошибке, если возраст отрицательный
-        }
+        // Получаем значение myValue с использованием метода getMyValue
+        int value = myObject.getMyValue();
+        System.out.println("Значение myValue: " + value);
+
+        // Устанавливаем новое значение myValue с использованием метода setMyValue
+        myObject.setMyValue(100);
+        System.out.println("Новое значение myValue: " + myObject.getMyValue());
     }
 }
